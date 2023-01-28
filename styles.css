@@ -1,0 +1,261 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap');
+
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Work Sans';
+}
+
+.projects{
+    display: flex;
+    height: 100vh;
+}
+
+.project_section{
+    flex: 20%;
+    padding: 1.2rem;
+    margin-left: 4.3rem;
+    padding-top: 5rem;
+}
+
+.project_section h1 {
+    font-weight: 700;
+    font-size: 2.25rem;
+}
+
+/* remove the unwanted margin of p tag */
+.project_section p{
+    margin-top: 0.625rem;
+    margin-bottom: 0.625rem;
+}
+
+/* styling each div inside the project_section */
+.project_section > div {
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    font-size: 1.5rem;
+    margin: 0;
+    color:  #C2C7D6;
+}
+
+/* class for div to change when clicked */
+.selected_div{
+    width: 4px;
+    height: 31px;
+    background: #2947A9;
+    margin-right: 5px;
+}
+
+/* class for p tag to change which clicked */
+.selected_p{
+    color: #2947A9;
+}
+
+/* how items will behave while mouse hover */
+.items:hover,
+.items:active{
+    cursor: pointer;
+    background-color: #f1f38c;
+}
+
+/* end of .project_section ------------------------ */
+
+.project_display{
+    flex: 80%;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/*These are the cards which are initially displayed as none*/
+.slides{
+    display: flex;
+    transition: all 200ms ease;
+}
+
+.project_display .card_holder{
+    display: grid;
+    list-style: none;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 200px 200px;
+    gap: 20px;
+    justify-items: center;
+    align-content: center;
+}
+
+.project_cards{
+    width: 1000px;
+    height: 455px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    /* border: 1px solid black; */
+}
+
+
+.project_display .card{
+    width: 300px;
+    height: 200px;
+    /* background-color: #f1f38c; */
+    /* border: 1px solid black; */
+    object-fit: cover;
+    box-shadow: 0px 0px 37px -2px rgba(17, 24, 39, 0.05);
+    border-radius: 7px;
+}
+
+.section_mvmt{
+    transition: all 200ms ease;
+}
+
+
+/* styling buttons ------------------------------- */
+
+.project_display .buttons{
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+.buttons button{
+    width: 150px;
+    height: 50px;
+    background: #2947A9;
+    border: none;
+    border-radius: 7px;
+}
+
+.buttons button:hover{
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+.back{
+    display: flex;
+    justify-content: center;
+    flex-direction: row-reverse;
+    align-items: center;
+}
+
+button p{
+    font-size: 15px;
+    color: #FFFFFF;
+    margin: 0px 5px 0px 5px;
+}
+
+button img{
+    height: 17px;
+}
+
+.next{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*styling the small dots at the bottom*/
+
+.directions{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 346px;
+}
+
+.directions div{
+    height: 16px;
+    width: 16px;
+    background-color: #e0e3eb;
+    flex: none;
+    flex-grow: 0;
+    border-radius: 50%;
+    margin: 16px;
+}
+
+.directions .first{
+    background-color: #2947A9;
+}
+
+
+/* adding images individually to all the 24 divs
+.it1{
+    background-image: url("./images/it1.png");
+}
+.it2{
+    background-image: url("./images/it2.png");
+}
+.it3{
+    background-image: url("./images/it3.png");
+}
+.it4{
+    background-image: url("./images/it4.png");
+}
+.it5{
+    background-image: url("./images/it5.jpg");
+}
+.it6{
+    background-image: url("./images/it6.jpg");
+}
+
+.it7{
+    background-image: url("./images/it17.jpg");
+}
+.it8{
+    background-image: url("./images/it8.jpg");
+}
+.it9{
+    background-image: url("./images/it9.jpg");
+}
+.it10{
+    background-image: url("./images/it10.jpg");
+}
+.it11{
+    background-image: url("./images/it11.jpg");
+}
+.it12{
+    background-image: url("./images/it12.jpg");
+}
+
+.it13{
+    background-image: url("./images/it13.jpg");
+}
+.it14{
+    background-image: url("./images/it14.jpg");
+}
+.it15{
+    background-image: url("./images/it15.jpg");
+}
+.it16{
+    background-image: url("./images/it16.jpg");
+}
+.it17{
+    background-image: url("./images/it17.jpg");
+}
+.it18{
+    background-image: url("./images/it18.jpg");
+}
+
+.it19{
+    background-image: url("./images/it19.jpg");
+}
+.it20{
+    background-image: url("./images/it20.jpg");
+}
+.it21{
+    background-image: url("./images/it21.jpg");
+}
+.it22{
+    background-image: url("./images/it22.jpg");
+}
+.it23{
+    background-image: url("./images/it23.jpg");
+}
+.it24{
+    background-image: url("./images/it24.jpg");
+} */
