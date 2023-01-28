@@ -66,7 +66,7 @@ buttons.forEach(button => {
         else {
             px += mvmt;
         }
-        console.log(px);
+        // console.log(px);
 
         slide.style.transform = `translateX(${px}px)`;
 
@@ -75,7 +75,7 @@ buttons.forEach(button => {
         if (next_card_index < 0) next_card_index = 3;
         else if (next_card_index >= 4) next_card_index = 0;
 
-        console.log(active_card_index + " " + next_card_index);
+        // console.log(active_card_index + " " + next_card_index);
 
         // code to change the dots
         const dots = document.querySelectorAll(".directions div");
