@@ -7,6 +7,10 @@ var px = 0;
 let active_card_index = 0;
 let next_card_index = 0;
 
+const offset = [0, -990, -1980, -2970];
+const dir_btn = document.querySelectorAll(".buttons .directions div");
+let prev_dir_btn = dir_btn[0];
+
 section_arr.forEach(cur_section => {
     cur_section.addEventListener('click', () => {
 
@@ -33,6 +37,10 @@ section_arr.forEach(cur_section => {
         const dots = document.querySelectorAll(".directions div");
         dots[active_card_index].classList.remove("first");
 
+
+        prev_dir_btn = dir_btn[0];
+        prev_dir_btn.classList.remove("first");
+
         // add first class to the first dot.
         dots[0].classList.add("first");
         active_card_index = 0;
@@ -43,6 +51,7 @@ section_arr.forEach(cur_section => {
 
         // set px = 0;
         px = 0;
+
     })
 })
 
@@ -94,4 +103,25 @@ const img_elements = document.querySelectorAll(".card");
 // console.log(img_elements.length);
 img_elements.forEach(img => {
     img.src = `https://source.unsplash.com/random/architecture-interior&${Math.random() * 1000}`;
+})
+
+
+dir_btn.forEach(cur => {
+    cur.addEventListener("click", () => {
+        const dir_btn_idx = [...dir_btn].indexOf(cur);
+        // console.log(dir_btn_idx);
+
+        const slide = document.querySelectorAll(".slides")[cur_idx];
+        slide.style.transform = `translateX(${offset[dir_btn_idx]}px)`;
+
+        const dots = document.querySelectorAll(".directions div");
+
+        next_card_index = dir_btn_idx;
+        dots[active_card_index].classList.remove("first");
+        dots[next_card_index].classList.add("first");
+
+        // console.log(active_card_index + " " + next_card_index);
+
+        active_card_index = next_card_index;
+    });
 })
